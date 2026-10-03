@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Practice · Israel Akinyemi</title>
+<meta name="description" content="Try a maths problem with instant step-by-step solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- The menu, booking band and footer are added automatically by script.js -->
+<main class="wrap">
+
+<div class="page-head">
+  <p class="eyebrow">Try a problem</p>
+  <h1>Practice, with steps</h1>
+  <p class="lead">Pick a topic, solve it, then see exactly how it works step by step.</p>
+</div>
+<section>
+  <div class="practice" id="practice">
+    <div class="controls">
+      <label>Topic <select id="topic"><option value="linear">Linear equations</option><option value="quad">Quadratic equations</option></select></label>
+      <label>Level <select id="level"><option value="easy">Easier</option><option value="hard">Harder</option></select></label>
+    </div>
+    <p class="muted" id="prompt-text" style="margin:0">Solve for x</p>
+    <div class="problem" id="problem" aria-live="polite"></div>
+    <div class="answer">
+      <input id="answer" placeholder="Your answer" autocomplete="off" inputmode="text" aria-label="Your answer">
+      <button class="btn primary" id="check">Check</button>
+      <button class="btn ghost" id="show">Show steps</button>
+      <button class="btn ghost" id="next">New problem</button>
+    </div>
+    <p class="feedback" id="feedback" aria-live="polite"></p>
+    <ol class="solution" id="solution" hidden></ol>
+    <p class="score" id="score">Solved: 0</p>
+  </div>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

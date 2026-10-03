@@ -1,0 +1,111 @@
+/* Colours: change --accent to restyle the whole site */
+:root{--bg:#fbfaf7;--surface:#fff;--text:#1f2933;--muted:#5b6672;--line:#e5e2da;--accent:#1f6f5c;--soft:#e4f1ed}
+@media(prefers-color-scheme:dark){:root{--bg:#14181c;--surface:#1b2127;--text:#e8ebee;--muted:#9aa5b0;--line:#2b333b;--accent:#5fc2a6;--soft:#1d2f2a}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 "Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding-bottom:env(safe-area-inset-bottom,0)}
+h1,h2,h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;margin:0 0 .6rem;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,6vw,3.3rem)}h2{font-size:1.6rem}h3{font-size:1.1rem}
+p{margin:0 0 1rem}a{color:var(--accent)}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.5rem}
+.muted{color:var(--muted)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid transparent;padding-top:env(safe-area-inset-top,0);transition:border-color .2s,box-shadow .2s}
+.site-header.scrolled{border-color:var(--line);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.bar{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--text);text-decoration:none}
+.nav{display:flex;gap:1.4rem}
+.nav a{color:var(--muted);text-decoration:none;font-size:.95rem;padding:.3rem 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a.active{color:var(--accent);border-color:var(--accent)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:.4rem .7rem;font-size:1rem;cursor:pointer}
+@media(max-width:920px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 1.5rem 1rem}
+  .nav.open{display:flex}
+  .nav a{padding:.8rem 0;border-bottom:1px solid var(--line)}
+}
+
+/* Hero & page heads */
+.hero{display:grid;gap:2rem;align-items:center;padding:3rem 0 3.5rem}
+@media(min-width:720px){.hero{grid-template-columns:1.4fr 1fr;padding:4.5rem 0}}
+.eyebrow{color:var(--accent);font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.7rem}
+.lead{font-size:1.1rem;color:var(--muted);max-width:36rem}
+.page-head{padding:3rem 0 1.5rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:999px;border:1.5px solid var(--accent);text-decoration:none;font:600 .95rem system-ui,sans-serif;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--bg)}.btn.ghost{color:var(--accent);background:none}.btn:hover{opacity:.88}
+.photo{width:min(100%,280px);aspect-ratio:1;margin:0 auto;border-radius:50%;overflow:hidden;background:var(--soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--accent);font:600 3.5rem "Fraunces",Georgia,serif}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Content */
+section{padding:2.5rem 0;border-top:1px solid var(--line)}
+.grid{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:720px){.grid.three{grid-template-columns:repeat(3,1fr)}.grid.two{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.25rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.stat{font:600 2rem "Fraunces",Georgia,serif;color:var(--accent);line-height:1}
+.job{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem;margin-bottom:1.25rem}
+.job .meta{color:var(--accent);font-size:.9rem;font-weight:600;margin-bottom:.8rem}
+.job ul{margin:0;padding-left:1.2rem;color:var(--muted)}.job li{margin-bottom:.45rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
+.tags li{background:var(--soft);color:var(--accent);border-radius:999px;padding:.35rem .85rem;font-size:.9rem}
+
+/* Contact */
+.contact-list{list-style:none;margin:0 0 2rem;padding:0;max-width:30rem}
+.contact-list li{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.contact-list span{color:var(--muted)}.contact-list a{font-weight:600;text-decoration:none;word-break:break-all}
+form{display:grid;gap:.9rem;max-width:30rem}
+label{display:grid;gap:.3rem;font-size:.9rem;color:var(--muted)}
+input,textarea{font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.7rem .85rem;width:100%}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+
+footer{margin-top:2rem;padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.875rem}
+
+/* Scroll reveal (added by script.js) */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ---- v2: maths identity, booking, practice ---- */
+body{position:relative}
+body::before{content:"";position:absolute;inset:0 0 auto 0;height:620px;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:32px 32px;opacity:.55;-webkit-mask-image:linear-gradient(#000 20%,transparent);mask-image:linear-gradient(#000 20%,transparent)}
+.site-header .wrap{max-width:1040px}
+.nav{gap:1.2rem}
+.nav a.nav-cta{background:var(--accent);color:var(--bg);padding:.5rem 1.1rem;border-radius:999px;border:0;font-weight:600}
+.nav a.nav-cta:hover{opacity:.88;color:var(--bg)}
+@media(max-width:920px){.nav a.nav-cta{margin-top:.8rem;text-align:center;border-bottom:0}}
+.btn.wa{background:#1f9d55;border-color:#1f9d55;color:#fff}
+
+/* chalkboard worked example */
+.board{background:#1d3b33;color:#eaf5f0;border-radius:18px;padding:1.6rem 1.8rem;box-shadow:0 10px 30px rgba(0,0,0,.12);max-width:32rem}
+.board small{display:block;color:#9fd3c3;letter-spacing:.08em;text-transform:uppercase;font:600 .75rem system-ui,sans-serif;margin-bottom:.8rem}
+.eq{font:italic 1.6rem/1.5 "Cambria Math","Fraunces",Georgia,serif;opacity:0;transform:translateX(-8px)}
+.eq span{display:block;font:.8rem system-ui,sans-serif;font-style:normal;color:#9fd3c3;margin-bottom:.1rem}
+.reveal.in .eq,.board.in .eq{animation:write .6s forwards}
+.board .eq:nth-of-type(2){animation-delay:.5s}.board .eq:nth-of-type(3){animation-delay:1s}.board .eq:nth-of-type(4){animation-delay:1.5s}
+@keyframes write{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.eq{opacity:1;transform:none;animation:none!important}}
+
+/* lesson steps */
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+@media(min-width:720px){.steps{grid-template-columns:repeat(2,1fr)}}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.25rem 1.25rem 4rem;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:1.1rem;top:1.1rem;width:2rem;height:2rem;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font:600 1rem "Fraunces",Georgia,serif}
+.steps h3{margin-bottom:.2rem}.steps p{margin:0;color:var(--muted);font-size:.95rem}
+.cta{background:var(--soft);border-radius:18px;padding:2rem;text-align:center;margin:2.5rem 0 0}
+.cta p{color:var(--muted)}.cta .actions{justify-content:center}
+
+/* practice widget */
+.practice{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.5rem;max-width:36rem}
+.controls{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.controls label{flex:1;min-width:9rem}
+select{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.6rem;width:100%}
+.problem{font:italic 2rem/1.3 "Cambria Math","Fraunces",Georgia,serif;margin:.6rem 0 1.2rem;overflow-x:auto}
+.answer{display:flex;gap:.6rem;flex-wrap:wrap}.answer input{flex:1;min-width:8rem}
+.feedback{min-height:1.6rem;margin:.9rem 0 0;font-weight:600}.feedback.ok{color:var(--accent)}.feedback.no{color:#c0532b}
+.solution{margin:1rem 0 0;padding:1rem 1rem 1rem 2.2rem;background:var(--soft);border-radius:12px}
+.solution li{margin-bottom:.5rem}.solution[hidden]{display:none}
+.score{color:var(--muted);font-size:.9rem;margin-top:1rem}
